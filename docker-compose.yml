@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16
+    container_name: rooms_postgres
+    environment:
+      POSTGRES_DB: 
+      POSTGRES_USER: 
+      POSTGRES_PASSWORD: 
+    ports:
+      - "5433:5432"   # Use a different host port if 5432 is taken
+    volumes:
+      - roomsdb_data_new:/var/lib/postgresql/data
+
+volumes:
+  roomsdb_data_new:
